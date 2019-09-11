@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <h1>Add users</h1>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="p-5">
+        <div class="text-center">
+          <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+        </div>
+        <form method="put" [formGroup]="userForm" (ngSubmit)="save()" class="form user">
+          <div class="form-group">
+            <label for="code">Code:</label>
+            <input id="code" formControlName="code" type="text" class="form-control form-control-user"
+                   aria-describedby="emailHelp" placeholder="Code">
+          </div>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input id="name" formControlName="name" type="text" class="form-control form-control-user"
+                   aria-describedby="emailHelp" placeholder="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" formControlName="email" type="email" class="form-control form-control-user"
+                   aria-describedby="emailHelp" placeholder="email">
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <input id="mobile" formControlName="mobile" type="text" class="form-control form-control-user"
+                   aria-describedby="emailHelp" placeholder="mobile">
+          </div>
+          <div class="form-group">
+            <label for="countries">Country:</label>
+            <select id="countries" formControlName="country" class="form-control" >
+              <option *ngFor="let country of countries" >{{country.name.common}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input id="city" type = "text" formControlName="city" class="form-control form-control-user"
+                   placeholder="city">
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input id="address" type = "text" formControlName="address" class="form-control form-control-user"
+                   placeholder="Code">
+          </div>
+          <div class="form-group">
+            <label for="logo">Logo:</label>
+            <input id="logo" type = "text" [(ngModel)]="logo" formControlName="logo" class="form-control form-control-user"
+                   placeholder="logo">
+          </div>
+          <div class="form-group">
+            <label for="smtpserver">SMTPServer:</label>
+            <input id="smtpserver" type = "text"  formControlName="smtpserver" class="form-control form-control-user"
+                   placeholder="smtpserver">
+          </div>
+          <div class="form-group">
+            <label for="smtpusername">SMTPUserName:</label>
+            <input id="smtpusername" type = "text"  formControlName="smtpusername" class="form-control form-control-user"
+                   placeholder="smtpusername">
+          </div>
+          <div class="form-group">
+            <label for="smtppassword">SMTPPassWord:</label>
+            <input id="smtppassword" type = "password"  formControlName="smtppassword" class="form-control form-control-user"
+                   placeholder="smtppassword">
+          </div>
+          <div class="form-group">
+            <label for="smtpport">SMTPPort:</label>
+            <input id="smtpport" type = "number"  formControlName="smtpport" class="form-control form-control-user"
+                   placeholder="smtpport">
+          </div>
+          <div class="form-group">
+            <label for="loginurl">LoginUrl:</label>
+            <input id="loginurl" type = "text"  formControlName="loginurl" class="form-control form-control-user"
+                   placeholder="loginurl">
+          </div>
+          <div class="col-md-3">
+            <button [disabled]="!this.userForm.valid"  type="submit"  class="btn btn-primary btn-user btn-block">
+              Add User
+            </button>
+          </div>
+
+          <hr>
+        </form>
+        <hr>
+      </div>
+    </div>
+    <div class="col-lg-4 profile-header-container">
+      <div class="profile-header-img">
+        <img class="img-circle" src="{{logo}}" />
+        <!-- badge -->
+        <div class="rank-label-container">
+          <span class="label label-default rank-label">profile logo</span>
+        </div>
+      </div>
+      <!-- DEBUG -->
+      <!--<pre>{{userForm.get('code').valid}}</pre>
+      <pre>{{userForm.get('name').valid}}</pre>
+      <pre>{{userForm.get('email').valid}}</pre>
+      <pre>{{userForm.get('mobile').valid}}</pre>
+      <pre>{{userForm.get('phone').valid}}</pre>
+      <pre>{{userForm.get('country').valid}}</pre>
+      <pre>{{userForm.get('address').valid}}</pre>
+      <pre>{{userForm.get('city').valid}}</pre>
+      <pre>{{userForm.get('state').valid}}</pre>
+      <pre>{{userForm.get('logo').valid}}</pre>
+      <pre>{{userForm.get('smtpserver').valid}}</pre>
+      <pre>{{userForm.get('smtpusername').valid}}</pre>
+      <pre>{{userForm.get('smtppassword').valid}}</pre>
+      <pre>{{userForm.get('loginurl').valid}}</pre>-->
+    </div>
+  </div>
+</div>

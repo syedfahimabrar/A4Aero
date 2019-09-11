@@ -1,0 +1,145 @@
+<div class="container emp-profile">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="{{model.logo}}" alt=""/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            {{model.name}}
+          </h5>
+          <h6>
+            code: {{model.code}}
+          </h6>
+          <p class="proile-rating">Balance : <span>{{model.balance|currency:'BDT'}}</span></p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Server Info</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button  class="profile-edit-btn" name="btnAddMore" routerLink="/edit/{{id}}" >Edit Profile</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-work">
+          <p>State</p>
+          <a href="">Joined on: {{model.createdOnUtc|date}}</a><br/>
+          <a href="">Last Updated: {{model.updatedOnUtc|date}}</a><br/>
+          <a href="">Status: {{model.status}}</a>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>User Id</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.businessId}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Name</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.name}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Email</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.email}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Phone</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.mobile}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Country</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.country}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>City</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.city}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Street</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.street}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Login Url:</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.loginUrl}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>SMTP Server</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.smtpServer}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>SMTP UserName</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.smtpUserName}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>English Level</label>
+              </div>
+              <div class="col-md-6">
+                <p>Expert</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>SMTP Port</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{model.smtpPort}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

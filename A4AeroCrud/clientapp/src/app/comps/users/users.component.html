@@ -1,0 +1,94 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Business entities</h1>
+  <p class="mb-4"></p>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Business entities</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <div class="dataTables_wrapper dt-bootstrap4" id="dataTable_wrapper">
+          <div class="row">
+            <div class="col-sm-12">
+              <table aria-describedby="dataTable_info" cellspacing="0" class="table table-bordered dataTable" id="dataTable" role="grid"
+                     style="width: 100%;" width="100%">
+                <thead>
+                <tr role="row">
+                  <th></th>
+                  <th aria-controls="dataTable" aria-label="Name: activate to sort column descending" aria-sort="ascending" class="sorting_asc" colspan="1"
+                      rowspan="1" style="width: 106px;" tabindex="0">
+                    Joined On
+                  </th>
+                  <th aria-controls="dataTable" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1"
+                      style="width: 169px;" tabindex="0">Code
+                  </th>
+                  <th aria-controls="dataTable" aria-label="Office: activate to sort column ascending" class="sorting" colspan="2" rowspan="1"
+                      style="width: 76px;" tabindex="0">Name
+                  </th>
+                  <th aria-controls="dataTable" aria-label="Age: activate to sort column ascending" class="sorting" colspan="1" rowspan="1"
+                      style="width: 31px;" tabindex="0">City
+                  </th>
+                  <th aria-controls="dataTable" aria-label="Start date: activate to sort column ascending" class="sorting" colspan="1" rowspan="1"
+                      style="width: 68px;" tabindex="0">Mobile
+                  </th>
+                  <th aria-controls="dataTable" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1"
+                      style="width: 67px;" tabindex="0">Email
+                  </th>
+                  <th aria-controls="dataTable" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1"
+                      style="width: 67px;" tabindex="0">Balance
+                  </th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                  <th></th>
+                  <th colspan="1" rowspan="1">Joined On</th>
+                  <th colspan="1" rowspan="1">Code</th>
+                  <th colspan="2" rowspan="1">Name</th>
+                  <th colspan="1" rowspan="1">City</th>
+                  <th colspan="1" rowspan="1">Mobile</th>
+                  <th colspan="1" rowspan="1">Email</th>
+                  <th colspan="1" rowspan="1">Balance</th>
+                  <th></th>
+                </tr>
+                </tfoot>
+                <tbody>
+                <tr *ngFor="let data of bs" class="odd" role="row">
+                  <td><img _ngcontent-vwq-c0="" class="img-profile rounded-circle" src="{{data.logo}}"></td>
+                  <td class="sorting_1"><a>{{data.createdOnUtc|date}}</a></td>
+                  <td><a routerLink="/user/{{data.businessId}}">{{data.code}}</a></td>
+                  <td colspan="2"><a>{{data.name}}</a></td>
+                  <td><a>{{data.city}}</a></td>
+                  <td><a>{{data.mobile}}</a></td>
+                  <td><a>{{data.email}}</a></td>
+                  <td><a>{{data.balance}}$</a></td>
+                  <td>
+                    <pre><a routerLink="/user/{{data.businessId}}" class="fa fa-eye" aria-hidden="true"></a> <a routerLink="/edit/{{data.businessId}}" class="fas fa-edit" aria-hidden="true"></a> <a (click)="delete(data.businessId)" class="fa fa-trash" aria-hidden="true"></a></pre>
+                  </td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-5">
+              <div aria-live="polite" class="dataTables_info" id="dataTable_info" role="status">Showing 1 to 10 of 57
+                entries
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-7">
+              <ngb-pagination  [collectionSize]="totalPage" [(page)]="pagenumber"  [pageSize]="5" (pageChange)="loadPage(pagenumber)" aria-label="Default pagination" class="pagination-primary"></ngb-pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

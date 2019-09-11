@@ -1,0 +1,28 @@
+export class Business {
+  BusinessId:number;
+  Code:string;
+  Email:string;
+  Name:string;
+  Street:string;
+  City:string;
+  State:string;
+  Zip:string;
+  Country:string;
+  Mobile:string;
+  Phone:string;
+  Address:string;
+  ContactPerson:string;
+  RefferedBy:string;
+  Logo:string;
+  Status:number;
+  Balance:number;
+  LoginUrl:string;
+  SecurityCode:string;
+  SMTPServer:string;
+  SMTPPort:number;
+  SMTPUserName:string;
+  SMTPPassWord:string;
+  Deleted:boolean;
+  CreatedOnUtc:Date;
+  UpdatedOnUtc:Date;
+}
